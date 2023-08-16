@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.active {
+    background: #021431;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #dee5f0;
+  }
+  
+  .active:hover {
+    background: #021431;
+    border-radius: 5px;
+  }
