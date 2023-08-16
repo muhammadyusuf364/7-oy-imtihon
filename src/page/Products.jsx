@@ -13,25 +13,25 @@ function Products() {
       <Navbar></Navbar>
       <div className="w-[80%] cursor-pointer container mx-auto py-5">
         <Filter></Filter>
-        <p>{info.data.length} product</p>
+        <p className="text-[#394E6A] dark:text-white">{info.data.length} product</p>
         <div className="grid mx-auto md:grid-cols-2 lg:grid-cols-3 gap-5 p-">
           {info?.data.map((data) => {
             return (
               <div
                 key={data.id}
                 onClick={()=>navigate("/single", {state:{data:data}})}
-                className="text-center mx-auto w-full shadow-[#cfc5c5f8] shadow-lg p-5 rounded-lg "
+                className="text-center mx-auto w-full shadow-[#cfc5c5f8] shadow-lg dark:shadow-[#22242F] p-5 rounded-lg "
               >
                 <img
                   src={data.attributes.image}
                   className="rounded-lg h-[200px] md:h-[300px] w-full"
                   alt=""
                 />
-                <p>
+                <p className="text-2xl font-bold text-[#394E6A] dark:text-white">
                   {data.attributes.title[0].toUpperCase() +
                     data.attributes.title.slice(1)}
                 </p>
-                <span>${data.attributes.price}</span>
+                <span className="text-lg text-[#463AA1] dark:text-[#BF95F9]">${data.attributes.price}</span>
               </div>
             );
           })}

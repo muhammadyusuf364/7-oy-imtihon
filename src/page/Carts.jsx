@@ -33,38 +33,39 @@ function Cart() {
       <Navbar state={state.length} />
       <ToastContainer />
       <div
-        className={`w-[90%] mx-auto   container py-10 ${
+        className={`w-[90%] mx-auto  container py-10 ${
           state.length < 3 && "lg:h-[100vh]"
         }`}
       >
-        <h1 className="text-2xl font-bold text-[#394E6A] ">
+        <h1 className="text-2xl font-bold text-[#394E6A] dark:text-white">
           {state.length ? "Shopping Cart" : "Your Cart Is Empty"}
         </h1>
         <hr className="my-5" />
-        <div className="grid  lg:grid-cols-2 gap-10">
+        <div className="grid  max-lg:grid-cols-1 gap-10">
           {state?.map((cart, i) => (
             <div
               key={i}
               className="sm:flex gap-3 md:gap-10 "
             >
               <img
+                className="w-[200px] h-[200px] sm:h-[200px] sm:w-[200px] rounded-lg"
+
                 src={cart?.img}
-                className="w-[200px] h-[200px] sm:h-[400px] sm:w-[300px] rounded-lg"
                 alt=""
               />
               <div>
-                <h1 className="text-2xl font-bold">{cart.title}</h1>
-                <p className="text-xl font-bold my-5">{cart.company}</p>
-                <p>Price:${cart.price / 100}</p>
-                <p className="flex items-center my-5 gap-4">
+                <h1 className="text-2xl font-bold text-black dark:text-white">{cart.title}</h1>
+                <p className="text-xl font-bold  text-black dark:text-white my-5">{cart.company}</p>
+                <p className=" text-black dark:text-white">Price:${cart.price / 100}</p>
+                <p className="flex items-center  text-black dark:text-white my-5 gap-4">
                   Color:
                   <button
                     className="w-5 h-5 rounded-full"
                     style={{ background: cart.color }}
                   />
                 </p>
-                <p>Amount</p>
-                <div className="flex justify-center bg-blue-700 text-2xl text-white rounded-lg p-1 gap-3 md:gap-10 mb-10">
+                <p className=" text-black dark:text-white">Amount</p>
+                <div className="flex justify-center bg-blue-700 dark:bg-[#FF57B6] text-2xl text-white rounded-lg p-1 gap-3 md:gap-10 mb-10">
                   <button
                     onClick={() => decrease(cart.id, cart.color)}
                     className="flex items-center"
@@ -73,7 +74,7 @@ function Cart() {
                   </button>
                   <span>{cart.count}</span>
                   <button
-                    className="flex items-center "
+                    className="flex items-center"
                     onClick={() => increase(cart.id, cart.color)}
                   >
                     <AiOutlinePlusCircle />
@@ -81,7 +82,7 @@ function Cart() {
                 </div>
                 <p
                   onClick={() => removeF(cart.id, cart.color)}
-                  className="hover:underline cursor-pointer text-blue-700"
+                  className="hover:underline cursor-pointer text-blue-700 dark:text-[#FF57B6]"
                 >
                   Remove
                 </p>

@@ -46,12 +46,12 @@ function addTOCard() {
         <ToastContainer position="top-right" />
       <Navbar></Navbar>
       <div className="flex gap-2 items-center absolute top-32 left-40">
-          <button onClick={()=>Navigate("/")}>Home</button>
+          <button className="text-black dark:text-white" onClick={()=>Navigate("/")}>Home</button>
           <GoArrowRight></GoArrowRight>
-          <button onClick={()=>Navigate("/product")}>Products</button>
+          <button className="text-black dark:text-white" onClick={()=>Navigate("/product")}>Products</button>
         </div>
-      <div  className="container w-[80%] mt-14   mx-auto grid md: grid-cols-2 items-center 
-      justify-center">
+      <div  className="container w-[80%] mt-14  mx-auto   grid grid-cols-2 items-center 
+      justify-center max-lg:grid-cols-1  mx-auto">
        
         <img
           className="w-[500px] relative rounded-xl h-[500px]"
@@ -59,20 +59,20 @@ function addTOCard() {
           alt=""
         />
         <div>
-          <h1 className="text-5xl text-[#394E6A] mb-3 font-bold">
+          <h1 className="text-5xl text-[#394E6A] dark:text-white mb-3 font-bold">
             {state.data.attributes.title[0].toUpperCase() +
               state.data.attributes.title.slice(1)}
           </h1>
-          <p className="text-2xl font-bold mb-3 text-[#C7C9D1]">
+          <p className="text-2xl font-bold mb-3 text-[#C7C9D1] dark:text-white">
             {state.data.attributes.company}
           </p>
-          <p className="text-xl text-[#394E6A] mb-2">
+          <p className="text-xl text-[#394E6A] dark:text-white mb-2">
             ${state.data.attributes.price}
           </p>
-          <p className="text-slate-600 text-lg mb-2">
+          <p className="text-slate-600 dark:text-white text-lg mb-2">
             {state.data.attributes.description}
           </p>
-          <p className="mb-2 text-lg">Colors:</p>
+          <p className="mb-2 text-lg text-black dark:text-white">Colors:</p>
           {state.data.attributes.colors.map((col, idx) => (
             <div  key={idx}>
             <button
@@ -87,15 +87,16 @@ function addTOCard() {
             </div>
           ))}
           <div>
-            <p className="mb-2 text-lg">Amount</p>
-            <select className="w-[40%] p-2 h-[20%] border-[2px] mb-10 rounded-lg border-black ">
+            <p className="mb-2 text-lg text-black dark:text-white">Amount</p>
+            <select className="w-[40%] p-2 h-[20%] border-[2px] mb-10 rounded-lg border-black dark:border-[#AA73F7]
+            bg-white dark:bg-[#272935] text-black dark:text-white">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
             </select>
           </div>
           <div>
-            <button onClick={() => addTOCard()}className="bg-[#3B3187] px-4 mb-6 text-[#DBCFEA] rounded-lg py-3">
+            <button onClick={() => addTOCard()}className="bg-[#3B3187] dark:bg-[#BF95F9] text-[#DBC2CF] dark:text-black px-4 mb-6 text-[#DBCFEA] rounded-lg py-3">
               ADD TO BAG
             </button>
           </div>

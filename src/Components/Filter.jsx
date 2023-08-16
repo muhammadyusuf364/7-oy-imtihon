@@ -52,10 +52,10 @@ function Filter() {
   return (
     <form
       onSubmit={submit}
-      className="grid relative  sm:grid-cols-2 md:grid-cols-3 rounded-md lg:grid-cols-4 bg-[#F0F6FF] p-5 gap-5"
+      className="grid relative  sm:grid-cols-2 md:grid-cols-3 rounded-md lg:grid-cols-4 bg-[#F0F6FF] dark:bg-[#181920] p-5 gap-5"
     >
       <div>
-        <label htmlFor="price">Serarch Product</label>
+        <label htmlFor="price" className="text-black dark:text-white">Serarch Product</label>
         <br />
         <input
           type="search"
@@ -67,17 +67,17 @@ function Filter() {
               [e.target.name]: e.target.value,
             })
           }
-          className="w-full rounded-xl p-1 px-2 my-3"
+          className="w-full bg-white dark:bg-[#272935]  text-black dark:text-white rounded-xl p-1 px-2 my-3"
         />
       </div>
       <div>
-        <label htmlFor="category">
+        <label className="text-black dark:text-white"  htmlFor="category">
           Category
         </label>
         <br />
         <select
           id="category"
-          className="w-full rounded-xl p-1 px-2 my-3"
+          className="w-full bg-white dark:bg-[#272935] rounded-xl p-1 px-2 my-3"
           name="category"
           onChange={(e) =>
             setFilter({
@@ -95,13 +95,13 @@ function Filter() {
         </select>
       </div>
       <div>
-        <label className="" htmlFor="company">
+        <label className="text-black dark:text-white" htmlFor="company">
           Company
         </label>
         <br />
         <select
           id="company"
-          className="w-full rounded-xl p-1 px-2 my-3"
+          className="w-full  bg-white dark:bg-[#272935] rounded-xl p-1 px-2 my-3"
           name="company"
           onChange={(e) =>
             setFilter({
@@ -120,11 +120,11 @@ function Filter() {
       </div>
 
       <div>
-        <label htmlFor="sort">Sort By </label>
+        <label className="text-black dark:text-white" htmlFor="sort">Sort By </label>
         <br />
         <select
           id="sort"
-          className="w-full rounded-xl p-1 px-2 my-3"
+          className="w-full  bg-white dark:bg-[#272935] rounded-xl p-1 px-2 my-3"
           name="sort"
           onChange={(e) =>
             setFilter({
@@ -140,7 +140,7 @@ function Filter() {
         </select>
       </div>
       <div>
-        <label htmlFor="price">Select Price {filter.price / 100}.00</label>
+        <label htmlFor="price" className="text-[#394E6A] dark:text-white">Select Price {filter.price / 100}.00</label>
         <br />
         <input
           className="w-56"
@@ -158,20 +158,20 @@ function Filter() {
           max="100"
         />
         <div className="flex items-center gap-24">
-          <p>0</p>
-          <p className="text-center">Max : $1,000.00</p>
+          <p className="text-[#394E6A] dark:text-white">0</p>
+          <p className="text-center text-[#394E6A] dark:text-white">Max : $1,000.00</p>
         </div>
       </div>
-      <button className="bg-slate-700 h-6 rounded-xl text-slate-100">
+      <button className="bg-slate-700 dark:bg-[#FF57B6] h-6 rounded-xl text-slate-100 dark:text-black">
         SEARCH
       </button>
 
         <div className="flex">
-          <div className="flex items-center gap-4   rounded-xl bg-[#E2E8F4] absolute bottom-[-1600px] right-10">
-            <button onClick={fun11} className="hover:bg-[#C7CBD4] rounded-l-xl p-2 text-lg font-bold text-[#394E80]">
+          <div className="flex items-center gap-4   rounded-xl bg-[#E2E8F4] dark:bg-[#0101] absolute bottom-[-1600px] right-10">
+            <button onClick={fun11} className="hover:bg-[#C7CBD4] dark:hover:bg-[#09090C] rounded-l-xl p-2 text-lg font-bold  text-black dark:text-white">
               PREV
             </button>
-            <div className="">
+            <div>
               {btn.map((val) => (
                 <button
                   onClick={() => setCurrentPage(val)}
@@ -186,7 +186,7 @@ function Filter() {
                 </button>
               ))}
             </div>
-            <button onClick={funn} className="hover:bg-[#C7CBD4] rounded-r-xl p-2 text-lg font-bold text-[#394E80]">
+            <button onClick={funn} className="hover:bg-[#C7CBD4]  dark:hover:bg-[#09090C] rounded-r-xl p-2 text-lg font-bold text-[#394E80]  dark:text-white">
               NEXT
             </button>
           </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
+import BurgerMenu from "./BurgerMenu";
 function Navbar({ state }) {
   const navigate = useNavigate();
 
@@ -26,23 +27,26 @@ function Navbar({ state }) {
     <div className="bg-[#F0F6FF] dark:bg-[#181920] ">
       <div className="flex items-center container p-5 w-[80%] mx-auto  justify-between">
         <button
-          className="px-4 py-2 font-bold rounded-xl bg-[#0069E0] text-[#DBE1FF] dark:bg-[#FF57B6] text-[#301C27] text-2xl"
+          className="px-4 py-2 font-bold rounded-xl bg-[#0069E0]
+           text-[#DBE1FF] dark:bg-[#FF57B6] dark:text-[#301C27] text-2xl max-lg:hidden"
           onClick={() => navigate("/")}
         >
           C
         </button>
-
-        <div className=" gap-7  flex items-center justify-center">
-          <NavLink to="/">
+        <div>
+          <BurgerMenu></BurgerMenu>
+        </div>
+        <div className=" gap-7  flex  items-center justify-center max-lg:hidden">
+          <NavLink className="text-gray-500" to="/">
             Home
           </NavLink>
-          <NavLink to="/about">
+          <NavLink className="text-gray-500" to="/about">
             About
           </NavLink>
-          <NavLink to="/product">
+          <NavLink className="text-gray-500" to="/product">
             Products
           </NavLink>
-          <NavLink to="/cart">
+          <NavLink className="text-gray-500" to="/cart">
             Cart
           </NavLink>
         </div>
@@ -59,7 +63,7 @@ function Navbar({ state }) {
               </span>
               <svg
                 stroke="currentColor"
-                fill="currentColor"
+                fill="grey"
                 strokeWidth="0"
                 viewBox="0 0 16 16"
                 className="h-6 w-6"
