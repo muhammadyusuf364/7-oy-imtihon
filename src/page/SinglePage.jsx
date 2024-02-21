@@ -51,7 +51,7 @@ function addTOCard() {
           <button className="text-black dark:text-white" onClick={()=>Navigate("/product")}>Products</button>
         </div>
       <div  className="container w-[80%] mt-14  mx-auto   grid grid-cols-2 items-center 
-      justify-center max-lg:grid-cols-1  mx-auto">
+      justify-center max-lg:grid-cols-1 mx-auto">
        
         <img
           className="w-[500px] relative rounded-xl h-[500px]"

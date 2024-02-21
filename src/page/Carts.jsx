@@ -30,6 +30,7 @@ function Cart() {
 
   return (
     <>
+     
       <Navbar state={state.length} />
       <ToastContainer />
       <div
@@ -49,7 +50,7 @@ function Cart() {
             >
               <img
                 className="w-[200px] h-[200px] sm:h-[200px] sm:w-[200px] rounded-lg"
-
+                   
                 src={cart?.img}
                 alt=""
               />
@@ -77,7 +78,7 @@ function Cart() {
                     className="flex items-center"
                     onClick={() => increase(cart.id, cart.color)}
                   >
-                    <AiOutlinePlusCircle />
+                    <AiOutlinePlusCircle  />
                   </button>
                 </div>
                 <p

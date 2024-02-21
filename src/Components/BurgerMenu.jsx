@@ -10,8 +10,8 @@ function BurgerMenu() {
         <div className='mb-5 relative'>
         
 
-        {handle && <button className='lg:hidden' onClick={() => setHandle(false)}><RxHamburgerMenu size={30}></RxHamburgerMenu></button>}
-      {!handle && <button onClick={() => setHandle(true)}><AiOutlineClose size={30}></AiOutlineClose></button>}
+        {handle && <button className='lg:hidden' onClick={() => setHandle(false)}><RxHamburgerMenu color='grey' size={30}></RxHamburgerMenu></button>}
+      {!handle && <button onClick={() => setHandle(true)}><AiOutlineClose color='orange' size={30}></AiOutlineClose></button>}
    
 
       {!handle && <div>
